@@ -1,0 +1,11 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.notice {
+ font-weight: bold;
+ color: green;
+}
+.alert {
+ font-weight: bold;
+ color: red;
+}
