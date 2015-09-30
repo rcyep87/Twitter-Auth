@@ -6,17 +6,18 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     unless user_logged_in?
-      redirect_to new_user_path
+      redirect_to new_login_path
     end
+  end
 
   def current_user
     if user_logged_in?
-      User.find(session[:logged_in_users_id])
+      User.find(session[:logged_in_user_id])
     end
   end
 
   def user_logged_in?
-    session[:logged_in_users_id].present?
+    session[:logged_in_user_id].present?
   end
-  
+
 end

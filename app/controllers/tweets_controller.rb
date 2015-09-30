@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /tweets
   # GET /tweets.json
