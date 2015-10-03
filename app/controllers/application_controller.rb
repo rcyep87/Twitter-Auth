@@ -12,12 +12,12 @@ class ApplicationController < ActionController::Base
 
   def current_user #enables retrieval of a user's session cookie as they visit different pages (from set_user_session)
     if user_logged_in?
-      User.find(session[:logged_in_users_id])
+      User.find(session[:logged_in_user])
     end
   end
 
   def user_logged_in? # tests to see if newly registered user is logged in
-    session[:logged_in_users_id].present?
+    session[:logged_in_user].present?
   end
   helper_method :user_logged_in?
 end
