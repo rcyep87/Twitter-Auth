@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   get     'home'   , to: 'homepage#index'  , as: 'homepage'
 
   root 'homepage#index'
-  # root 'users#index'
 end

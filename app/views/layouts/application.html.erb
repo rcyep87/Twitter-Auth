@@ -30,6 +30,7 @@
         <li><%= link_to 'Login'  , new_login_path %></li>
         <li><%= link_to 'Sign up', new_user_path %></li>
         <li><%= link_to 'Tweet'  , new_tweet_path %></li>
+        <li><%= link_to("Logout", logout_path, method: :DELETE) if user_logged_in? %></li>
         <li><%= link_to 'Real Twitter', "https://twitter.com/?lang=en" %></li>
       </ul>
    </div><!-- /.navbar-collapse -->
