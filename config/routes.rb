@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   post    '/login',  to: 'sessions#create',  as: 'login'
   delete  '/logout', to: 'sessions#destroy', as: 'logout'
 
-  root 'users#index'
+  get     'home'   , to: 'homepage#index'  , as: 'homepage'
+
+  root 'homepage#index'
+  # root 'users#index'
 end
