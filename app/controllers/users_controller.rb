@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :authenticate_user, only: [:show, :new]
+  skip_before_filter :authenticate_user, only: [:show, :new, :create]
 
   # GET /users
   # GET /users.json
@@ -20,6 +20,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    unless current_user == @user
+      redirect_to :back, alert: "You are not AUTHORIZED to edit this user."
+    end
   end
 
   # POST /users
